@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    >
+
+    <TextView
+        android:id="@+id/account_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Account Name: main"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/account_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Account Number: GE67JG7744036080800003"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/valute_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valute Type: GEL"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/card_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Card Type: VISA"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Balance: 678"
+        android:textSize="16sp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
