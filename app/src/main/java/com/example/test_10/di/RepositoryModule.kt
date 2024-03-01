@@ -1,5 +1,6 @@
 package com.example.test_10.di
 
+import com.example.test_10.data.common.ResponseHandler
 import com.example.test_10.data.repository.ApiRepositoryImpl
 import com.example.test_10.data.service.ApiService
 import com.example.test_10.domain.repository.ApiRepository
@@ -15,10 +16,12 @@ object RepositoryModule {
     @Provides
     @Singleton
     fun provideApiRepository(
-        apiService: ApiService
+        apiService: ApiService,
+        responseHandler: ResponseHandler
     ): ApiRepository {
         return ApiRepositoryImpl(
-            apiService = apiService
+            apiService = apiService,
+            responseHandler = responseHandler
         )
     }
 }

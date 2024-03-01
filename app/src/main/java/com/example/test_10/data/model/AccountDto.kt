@@ -9,20 +9,10 @@ data class AccountDto(
     @Json(name = "account_number")
     val accountNumber: String,
     @Json(name = "valute_type")
-    val valuteType: Currency,
+    val valuteType: String,
     @Json(name = "card_type")
-    val cardType: CardType,
+    val cardType: String,
     val balance: Int,
     @Json(name = "card_logo")
     val cardLogo: String?
 )
-enum class Currency(val displayName: String) {
-    USD("United States Dollar"),
-    GEL("Georgian Lari"),
-    EUR("Euro")
-}
-
-enum class CardType(val displayName: String) {
-    VISA("Visa Card"),
-    MASTER_CARD("Master Card")
-}

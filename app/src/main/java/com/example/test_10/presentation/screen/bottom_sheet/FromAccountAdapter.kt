@@ -7,8 +7,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.test_10.data.model.AccountDto
 import com.example.test_10.databinding.ItemBottomSheetFromBinding
+import com.example.test_10.presentation.model.AccountModel
 
-class FromAccountAdapter : ListAdapter<AccountDto, FromAccountAdapter.AccountViewHolder>(AccountDiffCallback()) {
+class FromAccountAdapter : ListAdapter<AccountModel, FromAccountAdapter.AccountViewHolder>(AccountDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AccountViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -17,26 +18,27 @@ class FromAccountAdapter : ListAdapter<AccountDto, FromAccountAdapter.AccountVie
     }
 
     override fun onBindViewHolder(holder: AccountViewHolder, position: Int) {
-        val account = getItem(position)
-        holder.bind(account)
+
+        holder.bind()
     }
 
     class AccountViewHolder(private val binding: ItemBottomSheetFromBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(account: AccountDto) {
+        private lateinit var account: AccountModel
+        fun bind() {
             binding.accountName.text = account.accountName
             binding.accountNumber.text = account.accountNumber
-            binding.valuteType.text = account.valuteType.displayName
-            binding.cardType.text = account.cardType.displayName
+            binding.valuteType.text = account.valuteType
+            binding.cardType.text = account.cardType
             binding.balance.text = account.balance.toString()
         }
     }
 
-    class AccountDiffCallback : DiffUtil.ItemCallback<AccountDto>() {
-        override fun areItemsTheSame(oldItem: AccountDto, newItem: AccountDto): Boolean {
+    class AccountDiffCallback : DiffUtil.ItemCallback<AccountModel>() {
+        override fun areItemsTheSame(oldItem: AccountModel, newItem: AccountModel): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: AccountDto, newItem: AccountDto): Boolean {
+        override fun areContentsTheSame(oldItem: AccountModel, newItem: AccountModel): Boolean {
             return oldItem == newItem
         }
     }

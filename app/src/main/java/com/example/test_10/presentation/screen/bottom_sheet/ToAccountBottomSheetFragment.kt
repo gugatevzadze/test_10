@@ -20,7 +20,6 @@ class ToAccountBottomSheetFragment : BottomSheetDialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentBottomSheetToBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 

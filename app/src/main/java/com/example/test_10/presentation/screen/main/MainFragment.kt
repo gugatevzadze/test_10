@@ -13,20 +13,23 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
     }
 
     override fun bindActionListeners() {
-        buttonSetup()
+        buttonFromSetup()
+        buttonToSetup()
     }
 
     override fun bindObservers() {
     }
 
-    private fun buttonSetup() {
+    private fun buttonFromSetup() {
         binding.btnFrom.setOnClickListener {
             val bottomSheetFragmentFrom = FromAccountBottomSheetFragment()
-            bottomSheetFragmentFrom.show(childFragmentManager, bottomSheetFragmentFrom.tag)
+            bottomSheetFragmentFrom.show(parentFragmentManager, bottomSheetFragmentFrom.tag)
         }
+    }
+    private fun buttonToSetup(){
         binding.btnTo.setOnClickListener {
             val bottomSheetFragmentTo = ToAccountBottomSheetFragment()
-            bottomSheetFragmentTo.show(childFragmentManager, bottomSheetFragmentTo.tag)
+            bottomSheetFragmentTo.show(parentFragmentManager, bottomSheetFragmentTo.tag)
         }
     }
 }

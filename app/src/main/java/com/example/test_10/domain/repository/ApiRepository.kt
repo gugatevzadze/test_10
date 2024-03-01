@@ -1,12 +1,12 @@
 package com.example.test_10.domain.repository
 
-import com.example.test_10.data.model.AccountDto
-import com.example.test_10.data.model.ConversionRateDto
+import com.example.test_10.data.common.Resource
+import com.example.test_10.data.model.ConversionRate
+import com.example.test_10.domain.model.Account
 import kotlinx.coroutines.flow.Flow
-import retrofit2.Response
 
 interface ApiRepository {
-    suspend fun getAccounts(): Response<Flow<List<AccountDto>>>
-    suspend fun verifyAccount(accountNumber: String): Response<Flow<AccountDto>>
-    suspend fun getConversionRate(fromAccount: String, toAccount: String): Response<Flow<ConversionRateDto>>
+    suspend fun getAccounts(): Flow<Resource<List<Account>>>
+    suspend fun verifyAccount(accountNumber: String): Flow<Resource<Account>>
+    suspend fun getConversionRate(fromAccount: String, toAccount: String): Flow<Resource<ConversionRate>>
 }

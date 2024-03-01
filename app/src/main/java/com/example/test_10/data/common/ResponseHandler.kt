@@ -3,6 +3,7 @@ package com.example.test_10.data.common
 import kotlinx.coroutines.flow.flow
 import retrofit2.Response
 
+
 class ResponseHandler {
     suspend fun <T : Any> safeApiCall(call: suspend () -> Response<T>) = flow {
         emit(Resource.Loading(loading = true))

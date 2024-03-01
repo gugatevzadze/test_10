@@ -1,5 +1,5 @@
 package com.example.test_10.data.model
 
-data class ConversionRateDto(
+data class ConversionRate(
     val course: Double
 )
